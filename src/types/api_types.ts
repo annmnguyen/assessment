@@ -62,6 +62,7 @@ export interface IStudent {
   universityId: string;
 }
 
+
 export interface IGradeTableRows {
   studentId: string;
   studentName: string;

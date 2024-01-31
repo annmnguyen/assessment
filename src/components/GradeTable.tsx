@@ -6,11 +6,11 @@
  * this function and tested your project using it.
  */
 
-import React, { useEffect, useState } from "react";
-import { DataGrid, GridColDef, GridValueGetterParams, GridPagination} from "@mui/x-data-grid";
-import { Pagination} from "@mui/material";
-import { IGradeTableProps } from "../types/api_types";
-import Box from '@mui/material/Box';
+//import { DataGrid, GridColDef, GridValueGetterParams, GridPagination} from "@mui/x-data-grid";
+//import { Pagination} from "@mui/material";
+
+/**import { IGradeTableProps } from "../types/api_types";*/
+//import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';

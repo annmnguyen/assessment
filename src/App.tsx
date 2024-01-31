@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 import { Select, Typography } from "@mui/material";
 import { SelectChangeEvent } from '@mui/material/Select';
-import Box from '@mui/material/Box';
+//import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
+//import FormControl from '@mui/material/FormControl';
 
 /**
  * You will find globals from this file useful!
  */
 import { GET_DEFAULT_HEADERS, BASE_API_URL , MY_BU_ID } from "./globals";
-import { IGradeTableRows, IUniversityClass, IStudent, IAssignment, IGrades} from "./types/api_types";
+import { IUniversityClass, IStudent, IAssignment, IGrades} from "./types/api_types";
 import BasicTable from "./components/GradeTable";
 
 
@@ -148,7 +148,7 @@ import BasicTable from "./components/GradeTable";
 
     
     // fetching students names based on their student id
-
+ 
     const fetchNames = async (studentId: string):  Promise<string[] | void>  => {
       setIsLoading(true);
       try{
@@ -158,7 +158,7 @@ import BasicTable from "./components/GradeTable";
         const studentname = data.map((student: IStudent) => student.name);
         console.log(studentname);
         return studentname;
-        setStudentId(studentname);
+        //setStudentId(studentname);
         } catch (e:any) {
           setError("Failed to fetch data: " + e.message);
         } finally {
@@ -180,7 +180,7 @@ import BasicTable from "./components/GradeTable";
         const universityid = data.map((student: IStudent) => student.universityId);
         console.log(universityid);
         return universityid;
-        setStudentId(universityid);
+        //setStudentId(universityid);
         } catch (e:any) {
           setError("Failed to fetch data: " + e.message);
         } finally {
@@ -230,7 +230,7 @@ import BasicTable from "./components/GradeTable";
         const data = await response.json();
         console.log(data);
         return data;
-        setSelectedClass(data);
+        //setSelectedClass(data);
       } catch (e:any) {
         setError("Failed to fetch data: " + e.message);
       } finally {
@@ -290,6 +290,8 @@ import BasicTable from "./components/GradeTable";
     // date: October 9, 2021
     // availability: https://www.codingdeft.com/posts/react-onclick-event-with-examples/
 
+    // title:React MUI FormControl API
+    // availability: https://www.geeksforgeeks.org/react-mui-formcontrol-api/ 
     return (
       <div style={{ width: "100vw", height: "100vh" }}>
         <Grid container spacing={2} style={{ padding: "1rem" }}>
