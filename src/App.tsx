@@ -3,7 +3,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import { Select, Typography } from "@mui/material";
 import { SelectChangeEvent } from '@mui/material/Select';
 //import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
+//import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 //import FormControl from '@mui/material/FormControl';
 
@@ -11,7 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
  * You will find globals from this file useful!
  */
 import { GET_DEFAULT_HEADERS, BASE_API_URL , MY_BU_ID } from "./globals";
-import { IUniversityClass, IStudent, IAssignment, IGrades} from "./types/api_types";
+import { IUniversityClass} from "./types/api_types";
 import BasicTable from "./components/GradeTable";
 
 
@@ -28,14 +28,14 @@ import BasicTable from "./components/GradeTable";
     // You will need to use more of these!
     const [currClassId, setCurrClassId] = useState<string>("");
     const [classList, setClassList] = useState<IUniversityClass[]>([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState("");
-    const [classAssignments, setClassAssignments] = useState([]);
-    const [SelectedClass, setSelectedClass] = useState<string | null>(null);
-    const [grades, setGrades] = useState<Map<string, number>>(new Map());
-    const [StudentClassId, setStudentClassId] = useState<string[]>([]);
-    const [StudentId, setStudentId] = useState<string[]>([]);
-    const [tableData, setTableData] = useState<Array<{ studentId: any, studentName: any, universityID: any, className: any, semester: 'fall2022' }>>([]);
+    //const [isLoading, setIsLoading] = useState(false);
+    //const [error, setError] = useState("");
+    //const [classAssignments, setClassAssignments] = useState([]);
+    //const [SelectedClass, setSelectedClass] = useState<string | null>(null);
+    //const [grades, setGrades] = useState<Map<string, number>>(new Map());
+    //const [StudentClassId, setStudentClassId] = useState<string[]>([]);
+    //const [StudentId, setStudentId] = useState<string[]>([]);
+    //const [tableData, setTableData] = useState<Array<{ studentId: any, studentName: any, universityID: any, className: any, semester: 'fall2022' }>>([]);
 
 
 // citations for useEffect
@@ -75,7 +75,7 @@ import BasicTable from "./components/GradeTable";
         }
       }, [currClassId]); 
 
-
+  /** 
       useEffect(() => {
         // attempting to retrieve all the data from api requests to render data into table
         if (currClassId) {
@@ -106,11 +106,11 @@ import BasicTable from "./components/GradeTable";
         }
       }, [currClassId]);
    
-
+*/
       
 // fetching all the classes provided in fall 2022 semester
     const fetchClasses = async (semester: string) => {
-      setIsLoading(true);
+      //setIsLoading(true);
       try {
         const response = await fetch(`${BASE_API_URL}/class/listBySemester/${semester}?BUID=${MY_BU_ID}`, {
           headers: GET_DEFAULT_HEADERS(),
@@ -118,9 +118,9 @@ import BasicTable from "./components/GradeTable";
         const data = await response.json();
         setClassList(data);
       } catch (e:any) {
-        setError("Failed to fetch data: " + e.message);
+        //setError("Failed to fetch data: " + e.message);
       } finally {
-        setIsLoading(false);
+        //setIsLoading(false);
       }
     };
 
@@ -130,7 +130,7 @@ import BasicTable from "./components/GradeTable";
   // fetch all enrolled students for a class based on class ID which returns students id
    
    const fetchStudents = async (classId: string) => {
-    setIsLoading(true);
+    //setIsLoading(true);
     try{
       const response = await fetch(`${BASE_API_URL}/class/listStudents/${classId}?BUID=${MY_BU_ID}`, {
         headers: GET_DEFAULT_HEADERS()});
@@ -138,14 +138,14 @@ import BasicTable from "./components/GradeTable";
       console.log(data);
       return data.map((student: any) => student.studentId);
       } catch (e:any) {
-        setError("Failed to fetch data: " + e.message);
+        //setError("Failed to fetch data: " + e.message);
       } finally {
-       setIsLoading(false)
+       //setIsLoading(false)
       }
     };
 
 
-
+  /** 
     
     // fetching students names based on their student id
  
@@ -222,6 +222,7 @@ import BasicTable from "./components/GradeTable";
 
     // fetching curClassId's class name based on classId
 
+  
     const fetchSelectedClass = async (classId: string): Promise<string | void> => {
       setIsLoading(true);
       try {
@@ -277,7 +278,7 @@ import BasicTable from "./components/GradeTable";
       const json = await res.json();
       console.log(json);
     };
-  
+  */
     // citation for displaying data 
 
     // title: React fetch data from API and display in table

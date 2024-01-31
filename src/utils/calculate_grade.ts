@@ -6,7 +6,7 @@
  *
  * Anything that has a type of "undefined" you will need to replace with something.
  */
-import { IAssignment, IUniversityClass, IGrades, IStudent, IGradeTableProps, IGradeTableRows } from "../types/api_types";
+import {  IUniversityClass, IGradeTableProps, IGradeTableRows } from "../types/api_types";
 /**
  * This function might help you write the function below.
  * It retrieves the final grade for a single student based on the passed params.

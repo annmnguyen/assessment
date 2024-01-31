@@ -31,7 +31,7 @@ export interface IUniversityClass {
   status: ClassStatus;
   semester: ClassSemester;
 }
-
+/** 
 export interface IAssignment {
   assignmentID: string;
   classId: string;
@@ -41,6 +41,7 @@ export interface IAssignment {
 }
 
 
+
 export interface IGrades {
   classId: string;
   grades: Map<string, number>;
@@ -48,20 +49,21 @@ export interface IGrades {
   studentId: string;
 
 }
-
+*/
 enum StudentStatus {
   enrolled = 'enrolled',
   graduated = 'graduated',
   unenrolled = 'enrolled',
 }
 
+/** 
 export interface IStudent {
   dateEnrolled: string;
   name: string;
   status: StudentStatus;
   universityId: string;
 }
-
+*/
 
 export interface IGradeTableRows {
   studentId: string;
